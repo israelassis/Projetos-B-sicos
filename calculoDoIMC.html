@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Massa Corporal</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: linear-gradient(180deg, #000000 0%, #26327F 100%); /* Gradiente Alura*/
+    display: flex; /* Flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100vh; /* Altura total da viewport */
+    width: 100%; /* Largura total da viewport */
+    margin: 0; 
+}
+
+.container {
+    width: 400px; /* Largura máxima para o container */
+    background-color: #ffffff; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    padding: 30px; 
+    border-radius: 15px; 
+    text-align: center; 
+}
+
+h1 {
+    color: #34495e; /* Título em cor escura */
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+h5 {
+    color: #7f8c8d; /* Subtítulo em cinza */
+    margin-top: 0;
+}
+
+label {
+    display: block; /* Garante que cada label fica em uma nova linha */
+    text-align: left;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Garante que padding e border não alterem o tamanho */
+}
+
+input:focus {
+    border-color: #1abc9c; /* Verde-água ao focar */
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    background-color: #1abc9c; /* Fundo verde-água vibrante */
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #16a085; /* Tom mais escuro ao passar o mouse */
+}
+
+#resultadoImc {
+    font-size: 3em; /* Tamanho do resultado maior */
+    color: #1abc9c; /* Cor de destaque */
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>IMC</h1>
+        <h5>Indice de Massa Corporal</h5>
+
+        <label>Peso: </label>
+        <input type="number" id="peso" value="" placeholder="Exemplo: 82.4"><br>
+        <label>Altura: </label>
+        <input type="number" id="altura" value="" placeholder="Exemplo: 1.70"><br>
+
+
+        <button onclick="calculo_Imc()">Calcular IMC</button>
+
+        <h3>Resultado IMC: <span id="resultado_Imc">0.00</span></h3>
+    </div>
+
+    <script>
+        function calculo_Imc() {
+            let valorPeso = document.getElementById("peso").value;
+            let valorAltura = document.getElementById("altura").value;
+            
+            // Convertendo os valores para float
+            let peso_Real = parseFloat(valorPeso);
+            let altura_Real = parseFloat(valorAltura);
+
+            // Verificando se os valores são válidos
+            if(isNaN(peso_Real) || isNaN(altura_Real) || peso_Real <= 0 || altura_Real <= 0) {
+                alert("Por favor, insira valores válidos para peso e altura.");
+                return; // retorna se os valores não forem válidos
+
+            }
+
+        const imc = peso_Real / (altura_Real**2); 
+           
+            document.getElementById("resultado_Imc").innerText = imc.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

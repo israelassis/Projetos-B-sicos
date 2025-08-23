@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Animação HTML e CSS</title>
+    <style>
+        body{
+    min-height: 100vh; 
+    background: #0c192c;
+
+}
+
+.container{
+    position: relative;
+    width: 100%; /*Largura de 100% do que estiver dentro do container*/
+    height: 100vh; /*100% do que estiver vendo na tela */
+    overflow: hidden; /*esconder caso a qtde de span"bolinhas" ultrapasse a tela*/
+}
+
+.bolhas{
+    position: absolute; /*absoluto relativo ao container*/
+   display: flex; /*alinhar os elementos filhos inline*/
+
+}
+
+.bolhas span{
+    width: 30px;
+    height: 30px;
+    background-color: #e5ff00;
+    margin: 0 4px; /*0 (cima e baixo) 4px (esq. direita)*/
+    border-radius: 50%;
+
+    /*Criar brilho na span => eixo (x"0", y"0", desfoque"0", espessura"10px")*/ 
+    box-shadow: 0 0 0 10px #e5ff0044, /*#e5ff00(44) => 44% opacidade */
+    0 0 50px #e5ff00,
+    0 0 100px #e5ff00; 
+    animation: animar calc(80s / var(--i)) linear infinite;
+    
+    /*animar o keyframes*/
+    /* nome"animar" > duração"15s" > comportamento"reto" > infinito"constante"*/
+    /* calc(30 / var(--i))"variavel criada no html" => 30s divido pela qtde de itens no html 30/6=5s*/
+}
+
+/* nome keyframes "animar"*/
+@keyframes animar {
+    0%{
+        /* trasnformar: eixo Y "vertical"(100vh = 100% da tela)*/
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        /*ainmar de baixo para cima */
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+/*separar as cores dos elementos - nth-of-type => pegar as cores pares*/
+.bolhas span:nth-of-type(even){
+    background: #2dc3ff;
+    box-shadow: 0 0 0 10px #2dc3ff44, /*eixo (x, y, desfoque, espessura)*/ 
+    0 0 50px #2dc3ff,
+    0 0 100px #2dc3ff; 
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bolhas">
+        <!-- (--i:11) => variavel criada para animação e calc() no keyframes -->
+        <span style="--i: 14"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 08"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 25"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 08"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 08"></span>
+        <span style="--i: 22"></span>
+      </div>
+    </div>
+  </body>
+</html>

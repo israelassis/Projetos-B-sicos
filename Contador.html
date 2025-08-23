@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercício 2: Contador de Cliques Básico</h1>
+    <p>
+      Objetivo: Introduzir a manipulação do DOM (Document Object Model) e o uso
+      de eventos.
+    </p>
+
+    <div class="container">
+      <h3 id="contador-display">Contador: 0</h3>
+      <button id="botao-clique" onclick="click()">Clique-me</button>
+    </div>
+
+    <script>
+      let contador = 0;
+      const contadorDisplay = document.getElementById("contador-display");
+      const botaoClique = document.getElementById("botao-clique");
+
+      botaoClique.addEventListener("click", () => {
+        contador++; /* mesmo que (contador=contador + 1) */
+        contadorDisplay.textContent = `Contador: ${contador}`;
+      });
+    </script>
+  </body>
+</html>

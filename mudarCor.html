@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercício 3: Mudar Cor de Fundo ao Clicar</h1>
+    <!-- <h2>Israel </h2> -->
+    <h5>
+      Objetivo: Fortalecer a manipulação do DOM, praticar a mudança de estilos e
+      introduzir arrays.
+    </h5>
+
+    <button id="mudar-cor-btn" onclick="mudarCor()">Mudar Cor!</button>
+
+    <script>
+      const cores = ["white", "green", "yellow", "pink", "red", "black"]; //array de cores - 6 cores
+      let indiceCorAtual = 0; //iniciar na primeira cor - white
+      const mudarCorBtn = document.getElementById("mudar-cor-btn");
+
+    
+       function mudarCor() {
+            // 1. Acessa a cor atual usando o índice
+            const novaCor = cores[indiceCorAtual];
+
+            // 2. Aplica a nova cor ao fundo do corpo do documento
+            document.body.style.backgroundColor = novaCor;
+
+            // 3. Incrementa o índice para a próxima cor
+            indiceCorAtual++;
+
+            // 4. Verifica se o índice excedeu o tamanho do array e o reseta
+            if (indiceCorAtual >= cores.length) { //if verifica se o indiceCorAtual atingiu o final do array - 6 cores
+                indiceCorAtual = 0; // Volta para a primeira cor do array - O índice RESETA para a primeira array
+            }
+        }      
+    </script>
+  </body>
+</html>

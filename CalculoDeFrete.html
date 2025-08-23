@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Frete</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-image: linear-gradient(45deg, aqua, rgb(49, 47, 47));
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 400px; /* Define um limite máximo de largura */
+    padding: 20px;
+    margin: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+input{
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 1rem;
+}
+label{
+    text-transform: uppercase;
+    }
+
+button {
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    border-radius: 10px;
+    border: 1px solid rgb(97, 98, 202);
+    background-color: rgba(97, 98, 202, 0.2);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculo de Frete</h2>
+        <p style="padding-bottom: 1rem;">Código simples em HTML, CSS e JavaScript que permite calcular o preço total de um item considerando desconto, frete e atualização da quantidade no carrinho</p>
+
+        <div class="input">
+            <label for="preco">Preço Unitário</label>
+            <input type="number" name="preco" id="preco" value="100">
+            <br>
+            <label for="quantidade">Quantidade</label>
+            <input type="number" name="quantidade" id="quantidade" value="1">
+            <br>
+            <label for="desconto">Desconto (%)</label>
+            <input type="number" name="desconto" id="desconto" value="10">
+            <br>
+            <label for="frete">Frete</label>
+            <input type="number" name="frete" id="frete" value="20">
+            <br>
+            <h3>Total: R$ <span id="total">0.00</span></h3>
+            
+        </div>
+<br>
+            <button onclick="calcularTotal()">Calcular Total</button>
+
+    </div>
+    <script>
+
+    //Chamar função e cirar Variáveis para o calculo => Pegar valor do usuário
+    function calcularTotal(){
+    let preco = parseFloat(document.getElementById("preco").value); //valores decimais
+    let quantidade = parseInt(document.getElementById("quantidade").value); //converte para numero inteiro
+    let desconto = parseFloat(document.getElementById("desconto").value);
+    let frete = parseFloat(document.getElementById("frete").value);
+    
+    
+        // Calculo
+        // Resumo => Valor do usuário > Calcular subtotal > Aplicar Desconto > Somar frete > Atualizar pagina
+        let subtotal = preco * quantidade;
+        let  valorDesconto = (subtotal * desconto) / 100;
+        let total = (subtotal - valorDesconto) + frete;
+
+        document.getElementById("total").innerText = total.toFixed(2);
+}
+    </script>
+</body>
+</html>
