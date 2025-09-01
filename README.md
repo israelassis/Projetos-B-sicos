@@ -5,12 +5,17 @@
 </div>
 
 ---
-Bem-vindo(a) ao meu Portfólio de Inicio de Carreira! Este repositório é uma incubadora de códigos brutos, um testemunho da minha jornada contínua no desenvolvimento web, destacando especificamente o conhecimento recente que adquiri, as novas habilidades incorporadas e que estarei ativamente aperfeiçoando, alem do meu compromisso com o aprendizado e a evolução contínuos no mundo dinâmico da programação.
+Este repositório é uma incubadora de códigos brutos, um testemunho da minha jornada contínua no desenvolvimento web
+</p>  
+
+ destacando especificamente o conhecimento recente que adquiri, as novas habilidades incorporadas e que estarei ativamente aperfeiçoando, alem do meu compromisso com o aprendizado e a evolução contínuos no mundo dinâmico da programação.
 <br>
 <br>
 
 ✨&nbsp;`O Que Você Encontrará Aqui`
-Esta coleção apresenta uma variedade de projetos JavaScript, cada um projetado para demonstrar minha compreensão de conceitos essenciais e minha capacidade de aplicá-los em cenários práticos. Você verá exemplos, algumas vezes criados da minha cabeça, outros aplicados atraves de video-aulas. De exercícios fundamentais a aplicações mais complexas, cada projeto aqui representa um passo à frente na minha jornada de desenvolvimento.
+Páginas estáticas, aprendizado rápido e prototipagem ágil!
+
+São exemplos, algumas vezes criados da minha cabeça, outros aplicados atraves de video-aulas. Migra de exercícios fundamentais a aplicações mais complexas, cada projeto aqui representa um passo à frente na minha jornada de desenvolvimento.
 <br>
 <br>
 
