@@ -1,10 +1,8 @@
-<div <div align="center">
+🚀 Transição de Carreira: Uma Jornada de Crescimento e Aprendizado Contínuo
 
-🚀&nbsp;`Transição de Carreira: Uma Jornada de Crescimento e Aprendizado Contínuo`
-</div>
 
 ---
-Este repositório é uma incubadora de códigos brutos, um testemunho da minha jornada contínua no desenvolvimento web
+&nbsp;Este repositório é uma incubadora de códigos brutos, um testemunho da minha jornada contínua no desenvolvimento web
 </p>  
 
  destacando especificamente o conhecimento recente que adquiri, as novas habilidades incorporadas e que estarei ativamente aperfeiçoando, alem do meu compromisso com o aprendizado e a evolução contínuos no mundo dinâmico da programação.
